@@ -241,18 +241,24 @@ p {
 
 .option-btn {
     background: white;
-    border: 2px solid transparent;
+    border: 2px solid #e5e7eb;
     border-radius: 15px;
     padding: 20px;
     font-size: 1.2rem;
     font-weight: 700;
+    color: var(--primary);
     cursor: pointer;
     transition: var(--transition);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-.option-btn:focus {
-    outline: none;
+.option-btn:focus,
+.option-btn:active {
+    outline: none !important;
+    border-color: #e5e7eb;
+    /* Keep base border on focus to avoid highlight */
 }
 
 @media (hover: hover) {
