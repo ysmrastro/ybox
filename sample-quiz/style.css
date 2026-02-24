@@ -74,8 +74,13 @@ body {
 }
 
 @keyframes move {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(100px, 50px) scale(1.1); }
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(100px, 50px) scale(1.1);
+    }
 }
 
 /* Container & Cards */
@@ -124,6 +129,7 @@ h1 {
     margin-bottom: 1rem;
     background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -150,7 +156,8 @@ p {
 }
 
 /* Buttons */
-.primary-btn, .secondary-btn {
+.primary-btn,
+.secondary-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -241,13 +248,23 @@ p {
     font-weight: 700;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-.option-btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    border-color: var(--primary);
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+.option-btn:focus {
+    outline: none;
+}
+
+@media (hover: hover) {
+    .option-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        border-color: var(--primary);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.option-btn:active:not(:disabled) {
+    transform: scale(0.98);
 }
 
 .option-btn.correct {
