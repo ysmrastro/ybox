@@ -1,87 +1,182 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ハングル・クイズ | Korean Quiz App</title>
-    <meta name="description" content="楽しく学べる韓国語単語クイズ。20問からランダムで10問出題！">
+    <title>ybox | App Gallery</title>
+    <meta name="description" content="さまざまなウェブアプリのギャラリー。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@0.321.0/font/lucide.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+            color: var(--text-main);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            padding: 80px 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(to right, #818cf8, #c084fc, #fb7185);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.05em;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .app-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #6366f1, #a855f7);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .app-card:hover::before {
+            opacity: 1;
+        }
+
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #818cf8;
+            font-size: 24px;
+        }
+
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .app-desc {
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .app-link {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #818cf8;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="background-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+    <div class="container">
+        <header>
+            <h1>ybox</h1>
+            <p class="subtitle">A collection of web experiments and tools.</p>
+        </header>
+
+        <main class="app-grid">
+            <a href="sample-quiz/" class="app-card">
+                <div class="app-icon">
+                    <i class="lucide-languages"></i>
+                </div>
+                <h2 class="app-title">ハングル・クイズ</h2>
+                <p class="app-desc">
+                    韓国語教室の生徒向け単語クイズ。20問からランダムに10問出題される楽しい学習ツールです。
+                </p>
+                <div class="app-link">
+                    Open App <i class="lucide-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- More apps can be added here -->
+        </main>
     </div>
 
-    <main class="app-container">
-        <!-- Start Screen -->
-        <section id="start-screen" class="card active">
-            <div class="icon-header">
-                <i data-lucide="languages" class="main-icon"></i>
-            </div>
-            <h1>ハングル・クイズ</h1>
-            <p>韓国語教室の生徒向け単語クイズです。<br>20問の中からランダムに10問出題されます。</p>
-            <button id="start-btn" class="primary-btn">
-                クイズを始める
-                <i data-lucide="play"></i>
-            </button>
-        </section>
-
-        <!-- Quiz Screen -->
-        <section id="quiz-screen" class="card">
-            <div class="quiz-header">
-                <div class="progress-container">
-                    <div class="progress-bar" id="progress-bar"></div>
-                </div>
-                <div class="quiz-info">
-                    <span id="question-number">第 1 問</span>
-                    <span id="score-display">スコア: 0</span>
-                </div>
-            </div>
-
-            <div class="question-container">
-                <h2 id="japanese-word">読み込み中...</h2>
-                <div class="options-grid" id="options-grid">
-                    <!-- Options will be injected here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Result Screen -->
-        <section id="result-screen" class="card">
-            <div class="icon-header">
-                <i data-lucide="trophy" class="success-icon"></i>
-            </div>
-            <h1>結果発表</h1>
-            <div class="final-score">
-                <span id="final-score-val">0</span> / 10
-            </div>
-            <p id="result-message">お疲れ様でした！</p>
-            <div class="result-actions">
-                <button id="retry-btn" class="secondary-btn">
-                    もう一度挑戦
-                    <i data-lucide="rotate-cw"></i>
-                </button>
-            </div>
-        </section>
-    </main>
-
     <footer>
-        <p>&copy; 2024 ハングル・クイズ. Built for Korean learners.</p>
+        &copy; 2024 ybox. All rights reserved.
     </footer>
-
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
+
 </html>
