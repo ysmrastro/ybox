@@ -13,7 +13,7 @@ window.quizData = [
   { id: 12, question: "頑張って", answer: "화이팅", options: ["화이팅", "응원해", "힘내", "축하해"] },
   { id: 13, question: "ごめん", answer: "미안해", options: ["미안해", "고마워", "축하해", "안녕히"] },
   { id: 14, question: "大丈夫", answer: "괜찮아", options: ["괜찮아", "어려워", "쉬워요", "좋아요"] },
-  { id: 15, question: "歌", answer: "노래", options: ["노래", "춤", "음악", "映画"] },
+  { id: 15, question: "歌", answer: "노래", options: ["노래", "춤", "음악", "영화"] },
   { id: 16, question: "写真", answer: "사진", options: ["사진", "영상", "그림", "거울"] },
   { id: 17, question: "夏", answer: "여름", options: ["여름", "봄", "가을", "겨울"] },
   { id: 18, question: "冬", answer: "겨울", options: ["겨울", "여름", "가을", "봄"] },
