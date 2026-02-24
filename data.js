@@ -1,0 +1,22 @@
+window.quizData = [
+  { id: 1, question: "挨拶", answer: "인사", options: ["인사", "상태", "친구", "가족"] },
+  { id: 2, question: "感謝", answer: "감사", options: ["감사", "사랑", "미안", "안녕"] },
+  { id: 3, question: "友達", answer: "친구", options: ["친구", "동생", "언니", "오빠"] },
+  { id: 4, question: "家族", answer: "가족", options: ["가족", "집", "부모", "동네"] },
+  { id: 5, question: "学校", answer: "학교", options: ["학교", "회사", "공원", "학원"] },
+  { id: 6, question: "先生", answer: "선생님", options: ["선생님", "학생", "의사", "기사"] },
+  { id: 7, question: "学生", answer: "학생", options: ["학생", "선생", "아이", "청년"] },
+  { id: 8, question: "水", answer: "물", options: ["물", "술", "불", "차"] },
+  { id: 9, question: "ご飯", answer: "밥", options: ["밥", "떡", "빵", "면"] },
+  { id: 10, question: "美味しい", answer: "맛있다", options: ["맛있다", "맵다", "짜다", "달다"] },
+  { id: 11, question: "愛してる", answer: "사랑해", options: ["사랑해", "좋아해", "미워해", "궁금해"] },
+  { id: 12, question: "頑張って", answer: "화이팅", options: ["화이팅", "응원해", "힘내", "축하해"] },
+  { id: 13, question: "ごめん", answer: "미안해", options: ["미안해", "고마워", "축하해", "안녕히"] },
+  { id: 14, question: "大丈夫", answer: "괜찮아", options: ["괜찮아", "어려워", "쉬워요", "좋아요"] },
+  { id: 15, question: "歌", answer: "노래", options: ["노래", "춤", "음악", "映画"] },
+  { id: 16, question: "写真", answer: "사진", options: ["사진", "영상", "그림", "거울"] },
+  { id: 17, question: "夏", answer: "여름", options: ["여름", "봄", "가을", "겨울"] },
+  { id: 18, question: "冬", answer: "겨울", options: ["겨울", "여름", "가을", "봄"] },
+  { id: 19, question: "明日", answer: "내일", options: ["내일", "오늘", "어제", "모레"] },
+  { id: 20, question: "今日", answer: "오늘", options: ["오늘", "내일", "어제", "지금"] }
+];
