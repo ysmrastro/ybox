@@ -1,5 +1,7 @@
 # サンプルのクイズアプリ
 
+🌐 **GitHub Pages**: https://ysmrastro.github.io/ybox/
+
 ## これはサンプルのクイズアプリで静的なウェブサイトです。
 
 ## 使い方
